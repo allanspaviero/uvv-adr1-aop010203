@@ -1,0 +1,11 @@
+# Dados brutos da ANP (~93 MB) — regeráveis com scripts/baixar_anp.py
+dados/
+
+# Entregáveis montados e capturas de tela — não versionados
+*.pdf
+*.png
+*.jpg
+*.jpeg
+
+__pycache__/
+*.pyc
