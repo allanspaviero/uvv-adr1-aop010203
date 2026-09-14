@@ -1,0 +1,101 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Modelo Logico - 3FN" id="aop02">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" page="1" pageWidth="1100" pageHeight="900" math="0" shadow="0">
+      <root><mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="bairro" value="BAIRRO" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="300" height="134" as="geometry"/>
+        </mxCell>
+        <mxCell id="bairro_0" value="[PK] id_bairro INT AUTO_INCREMENT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;fontStyle=1;" vertex="1" parent="bairro">
+          <mxGeometry x="0" y="30" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="bairro_1" value="[U] nome VARCHAR(60) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="bairro">
+          <mxGeometry x="0" y="56" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="bairro_2" value="[U] cidade VARCHAR(60) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="bairro">
+          <mxGeometry x="0" y="82" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="bairro_3" value="[U] uf CHAR(2) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="bairro">
+          <mxGeometry x="0" y="108" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="posto" value="POSTO" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="240" width="300" height="238" as="geometry"/>
+        </mxCell>
+        <mxCell id="posto_0" value="[PK] id_posto INT AUTO_INCREMENT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;fontStyle=1;" vertex="1" parent="posto">
+          <mxGeometry x="0" y="30" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="posto_1" value="[U] cnpj CHAR(14) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="posto">
+          <mxGeometry x="0" y="56" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="posto_2" value="nome VARCHAR(120) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="posto">
+          <mxGeometry x="0" y="82" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="posto_3" value="bandeira VARCHAR(60) NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="posto">
+          <mxGeometry x="0" y="108" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="posto_4" value="rua VARCHAR(120) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="posto">
+          <mxGeometry x="0" y="134" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="posto_5" value="numero VARCHAR(15) NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="posto">
+          <mxGeometry x="0" y="160" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="posto_6" value="cep CHAR(8) NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="posto">
+          <mxGeometry x="0" y="186" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="posto_7" value="[FK] id_bairro INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="posto">
+          <mxGeometry x="0" y="212" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="telefone_posto" value="TELEFONE_POSTO" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="40" y="540" width="300" height="82" as="geometry"/>
+        </mxCell>
+        <mxCell id="telefone_posto_0" value="[PK/FK] id_posto INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;fontStyle=1;" vertex="1" parent="telefone_posto">
+          <mxGeometry x="0" y="30" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="telefone_posto_1" value="[PK] telefone VARCHAR(20) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;fontStyle=1;" vertex="1" parent="telefone_posto">
+          <mxGeometry x="0" y="56" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="combustivel" value="COMBUSTIVEL" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="560" y="40" width="300" height="82" as="geometry"/>
+        </mxCell>
+        <mxCell id="combustivel_0" value="[PK] id_combustivel INT AUTO_INCREMENT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;fontStyle=1;" vertex="1" parent="combustivel">
+          <mxGeometry x="0" y="30" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="combustivel_1" value="[U] tipo VARCHAR(30) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="combustivel">
+          <mxGeometry x="0" y="56" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="coleta" value="COLETA" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="560" y="240" width="300" height="160" as="geometry"/>
+        </mxCell>
+        <mxCell id="coleta_0" value="[PK] id_coleta INT AUTO_INCREMENT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;fontStyle=1;" vertex="1" parent="coleta">
+          <mxGeometry x="0" y="30" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="coleta_1" value="[FK/U] id_posto INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="coleta">
+          <mxGeometry x="0" y="56" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="coleta_2" value="[FK/U] id_combustivel INT NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="coleta">
+          <mxGeometry x="0" y="82" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="coleta_3" value="[U] data_coleta DATE NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="coleta">
+          <mxGeometry x="0" y="108" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="coleta_4" value="valor DECIMAL(6,3) NOT NULL" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;spacingRight=6;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;html=1;" vertex="1" parent="coleta">
+          <mxGeometry x="0" y="134" width="300" height="26" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel0" value="N:1  fk_posto_bairro" style="edgeStyle=entityRelationEdgeStyle;html=1;rounded=0;exitX=1;exitY=0.5;entryX=1;entryY=0.5;endArrow=ERmandOne;startArrow=ERoneToMany;" edge="1" parent="1" source="posto" target="bairro">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel1" value="N:1  fk_telefone_posto" style="edgeStyle=entityRelationEdgeStyle;html=1;rounded=0;exitX=1;exitY=0.5;entryX=1;entryY=0.5;endArrow=ERmandOne;startArrow=ERoneToMany;" edge="1" parent="1" source="telefone_posto" target="posto">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel2" value="N:1  fk_coleta_posto" style="edgeStyle=entityRelationEdgeStyle;html=1;rounded=0;exitX=1;exitY=0.5;entryX=1;entryY=0.5;endArrow=ERmandOne;startArrow=ERoneToMany;" edge="1" parent="1" source="coleta" target="posto">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel3" value="N:1  fk_coleta_combustivel" style="edgeStyle=entityRelationEdgeStyle;html=1;rounded=0;exitX=1;exitY=0.5;entryX=1;entryY=0.5;endArrow=ERmandOne;startArrow=ERoneToMany;" edge="1" parent="1" source="coleta" target="combustivel">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="nota" value="AOP02 - Modelo Logico Relacional (3FN)\nAllan Spaviero Alpoim - 202636574\n\nPK = chave primaria   FK = chave estrangeira   U = UNIQUE\nQtd_Amostras (derivado do MER) = view vw_posto_amostras\nTelefone (multivalorado do MER) = tabela telefone_posto" style="shape=note;whiteSpace=wrap;html=1;align=left;spacingLeft=10;fillColor=#fff2cc;strokeColor=#d6b656;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="560" y="470" width="300" height="160" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
