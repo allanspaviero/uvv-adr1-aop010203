@@ -92,48 +92,48 @@ Compartilhe a tela e abra o site no topo da página.
 > agosto. Os dados são oficiais, da Série Histórica da ANP — eu não inventei
 > nenhum número.
 
-Aponte a barra de selos no topo (período, coletas, postos, fonte).
+Aponte a linha logo abaixo do título, na faixa azul.
 
-> E aqui em cima o site já diz de onde vem tudo: o período coberto, quantas
-> coletas tem, quantos postos e a fonte.
+> E aqui em cima o site já diz de onde vem tudo, sem letra miúda: quantas coletas
+> são, quantos postos, quantos bairros, o período exato e a fonte.
 
 ---
 
 ## Bloco 3 — Passeio pelas consultas
 
-Percorra as seções pelo menu do topo, nesta ordem. Não corra: pare em cada uma e
-pergunte se faz sentido.
+Percorra as abas do menu do topo, nesta ordem. Cada aba troca o painel na tela,
+não rola a página. Não corra: pare em cada uma e pergunte se faz sentido.
 
-**"Mais barato"**
+**Aba "Mais barato"**
 
 > Essa primeira parte é a resposta mais direta: onde cada combustível esteve mais
 > barato no período, e em que posto. Olha a diferença do etanol para a gasolina.
 
-**"Menor e maior preço"**
+**Aba "Menor e maior preço"**
 
 > Aqui a mesma coisa, mas com os dois extremos lado a lado. Repara que dá para
 > ver a diferença entre o posto mais caro e o mais barato no mesmo combustível —
 > isso é dinheiro que fica no bolso de quem sabe.
 
-**"Média e amostras"**
+**Aba "Média e amostras"**
 
 > Essa tabela mostra quanto cada posto cobrou em média, e sobre quantas coletas
 > essa média foi calculada. A coluna de amostras importa: média feita com trinta
 > coletas é bem mais confiável do que média feita com duas.
 
-**"Preço mais recente"**
+**Aba "Preço mais recente"**
 
 > Essa é a tabela de consultar antes de abastecer: o último preço registrado em
 > cada posto, para cada combustível.
 
-**"Evolução no tempo"** — troque o posto e o combustível nos seletores, na frente
-deles.
+**Aba "Evolução no tempo"** — troque o posto e o combustível nos seletores, na
+frente deles.
 
 > E aqui dá para escolher um posto e um combustível e ver o preço mudando ao
 > longo dos meses. Olha, se eu trocar o posto aqui... a consulta roda de novo na
 > hora.
 
-**"Gráficos"** — troque o combustível do segundo gráfico.
+**Aba "Gráficos"** — troque o combustível do segundo gráfico.
 
 > Esses dois gráficos são a parte mais fácil de ler. O primeiro mostra o preço
 > médio de cada combustível subindo e descendo. O segundo separa por posto, então
@@ -166,11 +166,11 @@ Mande o link no chat da chamada. **Pare de compartilhar sua tela.**
 Perguntas prontas — elas forçam a navegação real pelas quatro consultas:
 
 1. **"Qual posto está com a gasolina mais barata no registro mais recente?"**
-   *(leva à seção "Preço mais recente")*
+   *(leva à aba "Preço mais recente")*
 2. **"Em qual bairro fica esse posto?"**
    *(mesma tabela, coluna do bairro)*
 3. **"Qual foi o etanol mais barato do período inteiro, e quando?"**
-   *(leva à seção "Menor e maior preço")*
+   *(leva à aba "Menor e maior preço")*
 4. **"Escolhe um posto aí na 'Evolução no tempo' e me diz se o diesel subiu ou
    caiu de janeiro para agosto."**
    *(leva à consulta com seletores — é a consulta IV do trabalho)*
@@ -198,7 +198,7 @@ digitaram.
 > Obrigado pelo tempo de vocês. Confirmando de novo: eu vou usar essas imagens só
 > na entrega da faculdade. Alguém quer que eu tire alguma?
 
-**Capture o print 5:** a seção "Baixe os dados" do site, ou o momento em que
+**Capture o print 5:** a aba "Planilhas" do site, ou o momento em que
 alguém baixa a planilha.
 
 ---
@@ -214,7 +214,7 @@ que remarcar.
 | 2 | Sua tela compartilhada com uma tabela do site | a **divulgação** |
 | 3 | A tela de outro participante navegando no site | o **uso pela comunidade** |
 | 4 | O chat com o link e as respostas dos participantes | a **interação** |
-| 5 | A seção de planilhas, ou alguém baixando o arquivo | o **item II.e** |
+| 5 | A aba de planilhas, ou alguém baixando o arquivo | o **item II.e** |
 
 Se você também gravar vídeo: suba em nuvem (Google Drive, YouTube não listado) e
 guarde só o link — o relatório leva o link, não o arquivo.
@@ -226,6 +226,11 @@ guarde só o link — o relatório leva o link, não o arquivo.
 1. Salve os prints em `aop03/evidencias/`, nomeados na ordem:
    `01-ambiente.png`, `02-apresentacao.png`, `03-uso.png`, `04-chat.png`,
    `05-planilhas.png`.
+
+   > Essas imagens **não vão para o repositório público** — o `.gitignore` do
+   > projeto bloqueia `.png` e `.jpg`. É de propósito: são fotos de pessoas que
+   > consentiram com o uso na entrega da faculdade, não com a publicação na
+   > internet. Elas ficam só no seu computador e entram apenas no PDF.
 
 2. **Confira cada imagem** contra as regras: nenhum rosto, nenhum nome completo,
    nenhum logo de empresa, nenhuma criança. Se escapou alguma coisa, borre a
