@@ -60,6 +60,10 @@ REQUISITOS = [
 ARQUIVOS_DO_SITE = [
     "index.html", "style.css", "app.js",
     "vendor/sql-wasm.js", "vendor/sql-wasm.wasm", "vendor/chart.umd.js",
+    "vendor/fontes/spectral-latin-600-normal.woff2",
+    "vendor/fontes/ibm-plex-sans-latin-400-normal.woff2",
+    "vendor/fontes/ibm-plex-sans-latin-600-normal.woff2",
+    "vendor/fontes/ibm-plex-mono-latin-400-normal.woff2",
     "dados/banco.db", "dados/precos-combustiveis-vila-velha.xlsx",
     "dados/consulta-1.csv", "dados/consulta-2.csv",
     "dados/consulta-3.csv", "dados/consulta-4.csv",
@@ -122,6 +126,27 @@ def verificar_consulta_4_parametrizavel(con):
              "a consulta reescrita devolve o combustivel escolhido")
 
 
+def verificar_navegacao():
+    """Cada aba do menu precisa ter um painel com o id correspondente.
+
+    A navegacao e por abas: um href sem painel deixaria a aba muda, e um painel
+    sem aba ficaria inalcancavel. Nenhum dos dois quebra o carregamento, entao
+    so um teste pega.
+    """
+    print("\nNavegacao por abas")
+    html = (SITE / "index.html").read_text(encoding="utf-8")
+    abas = re.findall(r'<li><a href="#([\w-]+)">', html)
+    paineis = re.findall(r'<section class="painel" id="([\w-]+)"', html)
+
+    conferir(len(abas) > 0, "o menu tem abas", f"{len(abas)} abas")
+    orfas = [a for a in abas if a not in paineis]
+    conferir(not orfas, "toda aba aponta para um painel existente",
+             f"sem painel: {orfas}" if orfas else "")
+    mudos = [p for p in paineis if p not in abas]
+    conferir(not mudos, "todo painel e alcancavel por uma aba",
+             f"sem aba: {mudos}" if mudos else "")
+
+
 def verificar_arquivos():
     print("\nArquivos do site")
     for caminho in ARQUIVOS_DO_SITE:
@@ -151,6 +176,7 @@ def main():
     verificar_consultas(con)
     verificar_consulta_4_parametrizavel(con)
     con.close()
+    verificar_navegacao()
     verificar_arquivos()
 
     print()

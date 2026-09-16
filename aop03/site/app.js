@@ -34,6 +34,9 @@ const ROTULOS = {
 const COLUNAS_NUMERICAS = new Set(["valor", "preco_medio", "qtd_amostras"]);
 const MESES = ["jan", "fev", "mar", "abr", "mai", "jun",
                "jul", "ago", "set", "out", "nov", "dez"];
+const MESES_POR_EXTENSO = ["janeiro", "fevereiro", "março", "abril", "maio",
+                           "junho", "julho", "agosto", "setembro", "outubro",
+                           "novembro", "dezembro"];
 
 let banco = null;
 let sql = {};          // texto de cada arquivo .sql, por chave
@@ -54,6 +57,11 @@ const mesCurto = (iso) => {
     return `${MESES[Number(mes) - 1]}/${ano}`;
 };
 
+const dataPorExtenso = (iso) => {
+    const [ano, mes, dia] = String(iso).split("-");
+    return `${Number(dia)} de ${MESES_POR_EXTENSO[Number(mes) - 1]} de ${ano}`;
+};
+
 function formatar(coluna, valor) {
     if (valor === null || valor === undefined) return "—";
     if (coluna === "valor" || coluna === "preco_medio") return moeda(valor);
@@ -62,51 +70,59 @@ function formatar(coluna, valor) {
     return String(valor);
 }
 
-/* ------------------------------------------------------------ tema claro/escuro */
-
-function temaAtual() {
-    const marcado = document.documentElement.getAttribute("data-theme");
-    if (marcado) return marcado;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-}
-
-function aplicarTema(tema) {
-    document.documentElement.setAttribute("data-theme", tema);
-    document.getElementById("botao-tema").textContent =
-        tema === "dark" ? "Tema claro" : "Tema escuro";
-    // A cor das linhas vem do CSS, entao os graficos precisam ser redesenhados.
-    redesenharGraficos();
-}
-
-function iniciarTema() {
-    let guardado = null;
-    try {
-        guardado = localStorage.getItem("tema");
-    } catch (erro) {
-        guardado = null;   // navegacao privada ou armazenamento bloqueado
-    }
-    if (guardado === "dark" || guardado === "light") {
-        document.documentElement.setAttribute("data-theme", guardado);
-    }
-    const botao = document.getElementById("botao-tema");
-    botao.textContent = temaAtual() === "dark" ? "Tema claro" : "Tema escuro";
-    botao.addEventListener("click", () => {
-        const novo = temaAtual() === "dark" ? "light" : "dark";
-        try {
-            localStorage.setItem("tema", novo);
-        } catch (erro) {
-            /* preferencia so vale para esta visita */
-        }
-        aplicarTema(novo);
-    });
-}
-
 function cor(nome) {
     return getComputedStyle(document.documentElement).getPropertyValue(nome).trim();
 }
 
-function paleta() {
-    return ["--serie-1", "--serie-2", "--serie-3", "--serie-4", "--serie-5"].map(cor);
+/* ------------------------------------------------------------------ abas */
+
+const abas = [...document.querySelectorAll(".abas a")];
+const paineis = [...document.querySelectorAll(".painel")];
+
+/**
+ * Mostra um painel e esconde os demais.
+ *
+ * Os graficos precisam de um resize ao aparecer: o Chart.js mede o canvas no
+ * momento de desenhar, e canvas dentro de painel escondido mede zero.
+ */
+function mostrarAba(id) {
+    const alvo = paineis.some((painel) => painel.id === id) ? id : paineis[0].id;
+
+    paineis.forEach((painel) => { painel.hidden = painel.id !== alvo; });
+    abas.forEach((aba) => {
+        if (aba.getAttribute("href") === `#${alvo}`) {
+            aba.setAttribute("aria-current", "page");
+        } else {
+            aba.removeAttribute("aria-current");
+        }
+    });
+
+    Object.values(graficos).forEach((grafico) => {
+        if (grafico && !grafico.canvas.closest(".painel").hidden) grafico.resize();
+    });
+
+    // Se a pagina estiver rolada abaixo da barra de abas, volta para ela: o
+    // painel novo comeca do topo, nao no meio.
+    const barra = document.querySelector(".abas").offsetTop;
+    if (window.scrollY > barra) window.scrollTo({ top: barra, behavior: "instant" });
+}
+
+function iniciarAbas() {
+    abas.forEach((aba) => {
+        aba.addEventListener("click", (evento) => {
+            evento.preventDefault();
+            const id = aba.getAttribute("href").slice(1);
+            if (id !== location.hash.slice(1)) history.pushState(null, "", `#${id}`);
+            mostrarAba(id);
+        });
+    });
+
+    // popstate cobre voltar e avancar; hashchange cobre quem edita o endereco.
+    const doEndereco = () => mostrarAba(location.hash.slice(1));
+    window.addEventListener("popstate", doEndereco);
+    window.addEventListener("hashchange", doEndereco);
+
+    mostrarAba(location.hash.slice(1));
 }
 
 /* ------------------------------------------------------------- consultas */
@@ -148,7 +164,7 @@ function montarTabela(idTabela, colunas, linhas, destacar) {
             const celula = document.createElement("td");
             celula.textContent = formatar(coluna, linha[i]);
             if (COLUNAS_NUMERICAS.has(coluna)) celula.className = "numero";
-            if (destacar && destacar(coluna, linha)) celula.classList.add("destaque-menor");
+            if (destacar && destacar(coluna, linha)) celula.classList.add("menor");
             tr.appendChild(celula);
         });
         corpo.appendChild(tr);
@@ -164,11 +180,13 @@ function mostrarSql(idElemento, texto) {
 /* -------------------------------------------------------------- graficos */
 
 function desenharLinhas(idCanvas, rotulos, series, formatarRotulo = mesCurto) {
-    const cores = paleta();
-    const superficie = cor("--superficie");
-    const tinta = cor("--tinta-2");
-    const fraca = cor("--tinta-fraca");
-    const grade = cor("--grade");
+    const cores = ["--serie-1", "--serie-2", "--serie-3", "--serie-4", "--serie-5"]
+        .map(cor);
+    const papel = cor("--papel");
+    const tinta = cor("--tinta");
+    const fraca = cor("--tinta-3");
+    const linha = cor("--linha");
+    const fonte = { family: "IBM Plex Sans", size: 12 };
 
     if (graficos[idCanvas]) graficos[idCanvas].destroy();
 
@@ -189,9 +207,9 @@ function desenharLinhas(idCanvas, rotulos, series, formatarRotulo = mesCurto) {
                 pointRadius: 4,
                 pointHoverRadius: 6,
                 pointHitRadius: 14,
-                // Anel de 2px na cor da superficie: mantem o ponto legivel onde
-                // duas linhas se cruzam.
-                pointBorderColor: superficie,
+                // Anel de 2px na cor do papel: mantem o ponto legivel onde duas
+                // linhas se cruzam.
+                pointBorderColor: papel,
                 pointBorderWidth: 2,
                 pointBackgroundColor: cores[i % cores.length],
             })),
@@ -205,11 +223,12 @@ function desenharLinhas(idCanvas, rotulos, series, formatarRotulo = mesCurto) {
                     position: "bottom",
                     labels: {
                         color: tinta,
+                        font: fonte,
                         usePointStyle: true,
                         // Circulo, nao "line": a chave de linha seria desenhada com
-                        // o pointBorderColor - que aqui e a cor da superficie, por
-                        // causa do anel dos pontos - e sumiria no fundo. O circulo
-                        // usa o preenchimento, que e a cor da serie.
+                        // o pointBorderColor - que aqui e a cor do papel, por causa
+                        // do anel dos pontos - e sumiria no fundo. O circulo usa o
+                        // preenchimento, que e a cor da serie.
                         pointStyle: "circle",
                         boxWidth: 12,
                         boxHeight: 12,
@@ -217,6 +236,10 @@ function desenharLinhas(idCanvas, rotulos, series, formatarRotulo = mesCurto) {
                     },
                 },
                 tooltip: {
+                    backgroundColor: cor("--indigo"),
+                    titleFont: fonte,
+                    bodyFont: fonte,
+                    padding: 10,
                     callbacks: {
                         label: (contexto) =>
                             `${contexto.dataset.label}: ${moeda(contexto.parsed.y)}`,
@@ -226,15 +249,17 @@ function desenharLinhas(idCanvas, rotulos, series, formatarRotulo = mesCurto) {
             scales: {
                 x: {
                     grid: { display: false },
-                    border: { color: cor("--eixo") },
-                    ticks: { color: fraca },
+                    border: { color: cor("--filete") },
+                    ticks: { color: fraca, font: { family: "IBM Plex Sans", size: 11 } },
                 },
                 y: {
-                    grid: { color: grade, drawTicks: false },
+                    grid: { color: linha, drawTicks: false },
                     border: { display: false },
                     ticks: {
                         color: fraca,
-                        callback: (valor) => "R$ " + Number(valor).toFixed(2).replace(".", ","),
+                        font: { family: "IBM Plex Sans", size: 11 },
+                        callback: (valor) =>
+                            "R$ " + Number(valor).toFixed(2).replace(".", ","),
                     },
                 },
             },
@@ -247,27 +272,29 @@ function desenharLinhas(idCanvas, rotulos, series, formatarRotulo = mesCurto) {
 function renderizarDestaques() {
     const linhas = consultarObjetos(sql.c1).filter((l) => l.extremo === "MENOR PRECO");
     const container = document.getElementById("cartoes-destaque");
+
     container.replaceChildren(...linhas.map((linha) => {
         const cartao = document.createElement("div");
-        cartao.className = "cartao";
+        cartao.className = "preco";
         cartao.innerHTML =
-            `<p class="cartao__combustivel"></p>
-             <p class="cartao__preco"></p>
-             <p class="cartao__posto"></p>
-             <p class="cartao__local"></p>
-             <p class="cartao__data"></p>`;
-        cartao.querySelector(".cartao__combustivel").textContent = linha.combustivel;
-        cartao.querySelector(".cartao__preco").textContent = moeda(linha.valor);
-        cartao.querySelector(".cartao__posto").textContent = linha.posto;
-        cartao.querySelector(".cartao__local").textContent =
-            `${linha.endereco} — ${linha.bairro}`;
-        cartao.querySelector(".cartao__data").textContent =
+            `<p class="preco__combustivel"></p>
+             <p class="preco__valor"><small>R$</small><span></span></p>
+             <p class="preco__posto"></p>
+             <p class="preco__onde"></p>
+             <p class="preco__quando"></p>`;
+        cartao.querySelector(".preco__combustivel").textContent = linha.combustivel;
+        cartao.querySelector(".preco__valor span").textContent =
+            Number(linha.valor).toFixed(3).replace(".", ",");
+        cartao.querySelector(".preco__posto").textContent = linha.posto;
+        cartao.querySelector(".preco__onde").textContent =
+            `${linha.endereco}, ${linha.bairro}`;
+        cartao.querySelector(".preco__quando").textContent =
             `Coletado em ${dataBr(linha.data_coleta)}`;
         return cartao;
     }));
 }
 
-/* ------------------------------------------------------- consultas I a III */
+/* ------------------------------------------------------ consultas I a III */
 
 function renderizarConsultasFixas() {
     const c1 = executar(sql.c1);
@@ -351,14 +378,7 @@ function renderizarGrafico2() {
     mostrarSql("sql-g2", sql.g2);
 }
 
-function redesenharGraficos() {
-    if (!banco) return;
-    renderizarGrafico1();
-    renderizarGrafico2();
-    renderizarConsulta4();
-}
-
-/* --------------------------------------------------------------- seletores */
+/* ------------------------------------------------------------- seletores */
 
 function preencherSeletores() {
     const postos = consultarObjetos(
@@ -392,15 +412,19 @@ function preencherSeletores() {
         .addEventListener("change", renderizarGrafico2);
 }
 
-function preencherSelos() {
-    const [{ inicio, fim, total }] = consultarObjetos(
-        "SELECT MIN(data_coleta) AS inicio, MAX(data_coleta) AS fim, " +
-        "COUNT(*) AS total FROM coleta");
-    const periodo = `${dataBr(inicio)} a ${dataBr(fim)}`;
-    document.getElementById("selo-periodo").textContent = `Período: ${periodo}`;
-    document.getElementById("selo-coletas").textContent =
-        `${total} coletas de preço`;
-    document.getElementById("sobre-periodo").textContent = periodo;
+function preencherCapa() {
+    const [resumo] = consultarObjetos(
+        "SELECT MIN(c.data_coleta) AS inicio, MAX(c.data_coleta) AS fim, " +
+        "COUNT(*) AS coletas, COUNT(DISTINCT c.id_posto) AS postos, " +
+        "(SELECT COUNT(*) FROM bairro) AS bairros FROM coleta c");
+
+    document.getElementById("capa-fatos").textContent =
+        `${resumo.coletas} coletas de preço em ${resumo.postos} postos de ` +
+        `${resumo.bairros} bairros, entre ${dataPorExtenso(resumo.inicio)} e ` +
+        `${dataPorExtenso(resumo.fim)}, a partir da Série Histórica de Preços da ANP.`;
+
+    document.getElementById("sobre-periodo").textContent =
+        `${dataBr(resumo.inicio)} a ${dataBr(resumo.fim)}`;
 }
 
 /* ------------------------------------------------------------------ carga */
@@ -409,15 +433,17 @@ function avisarFalha(erro) {
     const aviso = document.createElement("p");
     aviso.className = "estado estado--erro";
     aviso.textContent =
-        "Não foi possível carregar o banco de dados. Se você abriu este arquivo " +
-        "direto do disco, o navegador bloqueia a leitura do banco: sirva a pasta " +
-        "por HTTP (por exemplo, python -m http.server) ou acesse a versão publicada.";
+        "Não foi possível abrir o banco de dados. Se você abriu este arquivo " +
+        "direto do disco, o navegador bloqueia essa leitura: sirva a pasta por " +
+        "HTTP (por exemplo, python -m http.server) ou acesse a versão publicada.";
     document.getElementById("cartoes-destaque").replaceChildren(aviso);
+    document.getElementById("capa-fatos").textContent =
+        "Os dados não puderam ser carregados.";
     console.error(erro);
 }
 
 async function iniciar() {
-    iniciarTema();
+    iniciarAbas();
 
     try {
         const [SQL, bytes, textos] = await Promise.all([
@@ -436,13 +462,17 @@ async function iniciar() {
         banco = new SQL.Database(new Uint8Array(bytes));
         sql = Object.fromEntries(textos);
 
-        preencherSelos();
+        preencherCapa();
         preencherSeletores();
         renderizarDestaques();
         renderizarConsultasFixas();
         renderizarConsulta4();
         renderizarGrafico1();
         renderizarGrafico2();
+
+        // Os graficos nasceram com os paineis escondidos, onde o canvas mede
+        // zero; refaz a medida do painel que esta visivel agora.
+        mostrarAba(location.hash.slice(1));
     } catch (erro) {
         avisarFalha(erro);
     }
