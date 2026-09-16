@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--
+  AOP03 - Arquitetura de Dados Relacionais I - UVV
+  Allan Spaviero Alpoim - matricula 202636574
+  Projeto de Extensao: Precos de Combustiveis - Vila Velha/ES
+
+  As tabelas desta pagina sao produzidas executando, no proprio navegador, os
+  mesmos arquivos .sql do projeto fisico. Nada aqui reimplementa as consultas.
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preços de combustíveis em Vila Velha/ES</title>
+<meta name="description" content="Consulte os preços de gasolina, gasolina aditivada, etanol e diesel nos postos de Vila Velha/ES, com dados da Série Histórica da ANP.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232a78d6'/%3E%3Cpath d='M9 24V9a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v15z' fill='%23fff'/%3E%3Crect x='11' y='10' width='6' height='4' rx='1' fill='%232a78d6'/%3E%3Cpath d='M21 12l2 2v8a1.5 1.5 0 0 0 3 0v-9' stroke='%23fff' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="topo__interno">
+    <div class="topo__linha">
+      <div>
+        <h1>Preços de combustíveis em Vila Velha&nbsp;/&nbsp;ES</h1>
+        <p class="topo__resumo">
+          Quanto custou a gasolina, a gasolina aditivada, o etanol e o diesel nos
+          postos da cidade — posto por posto, bairro por bairro, coleta por coleta.
+          Os dados vêm da Série Histórica de Preços da ANP.
+        </p>
+      </div>
+      <button class="tema" id="botao-tema" type="button" aria-live="polite">Tema escuro</button>
+    </div>
+    <ul class="selos">
+      <li class="selo" id="selo-periodo">Período: carregando…</li>
+      <li class="selo" id="selo-coletas">Coletas: carregando…</li>
+      <li class="selo">5 postos · 3 bairros</li>
+      <li class="selo">Fonte: ANP</li>
+    </ul>
+  </div>
+</header>
+
+<nav class="menu" aria-label="Seções da página">
+  <ul>
+    <li><a href="#destaques">Mais barato</a></li>
+    <li><a href="#consulta-1">Menor e maior preço</a></li>
+    <li><a href="#consulta-2">Média e amostras</a></li>
+    <li><a href="#consulta-3">Preço mais recente</a></li>
+    <li><a href="#consulta-4">Evolução no tempo</a></li>
+    <li><a href="#graficos">Gráficos</a></li>
+    <li><a href="#planilhas">Planilhas</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+  </ul>
+</nav>
+
+<main class="conteudo">
+
+  <!-- ------------------------------------------------------- destaques -->
+  <section class="secao" id="destaques">
+    <h2>Onde está mais barato</h2>
+    <p class="secao__texto">
+      O menor preço já registrado para cada combustível no período coberto, com o
+      posto onde ele foi encontrado e a data da coleta.
+    </p>
+    <div class="cartoes" id="cartoes-destaque">
+      <p class="estado">Carregando o banco de dados…</p>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------- consulta I -->
+  <section class="secao" id="consulta-1">
+    <span class="secao__requisito">Consulta I · requisito II.d.I</span>
+    <h2>Menor e maior preço de cada combustível</h2>
+    <p class="secao__texto">
+      Para cada tipo de combustível, a coleta mais barata e a mais cara de todo o
+      período — com o posto, o endereço, o bairro, o valor e a data.
+    </p>
+    <div class="rolagem"><table id="tabela-1"><tbody><tr><td class="estado">Carregando…</td></tr></tbody></table></div>
+    <details class="sql">
+      <summary>Ver a consulta SQL que gerou esta tabela</summary>
+      <pre><code id="sql-1"></code></pre>
+      <p class="sql__origem">Arquivo <code>sql/03-consulta-1-menor-maior-preco.sql</code> do projeto físico, executado sem alteração.</p>
+    </details>
+  </section>
+
+  <!-- ------------------------------------------------------ consulta II -->
+  <section class="secao" id="consulta-2">
+    <span class="secao__requisito">Consulta II · requisito II.d.II</span>
+    <h2>Preço médio e quantidade de amostras</h2>
+    <p class="secao__texto">
+      Quanto cada posto cobrou em média por cada combustível, e sobre quantas
+      coletas essa média foi calculada. Quanto mais amostras, mais confiável a média.
+    </p>
+    <div class="rolagem"><table id="tabela-2"><tbody><tr><td class="estado">Carregando…</td></tr></tbody></table></div>
+    <details class="sql">
+      <summary>Ver a consulta SQL que gerou esta tabela</summary>
+      <pre><code id="sql-2"></code></pre>
+      <p class="sql__origem">Arquivo <code>sql/03-consulta-2-media-e-amostras.sql</code> do projeto físico, executado sem alteração.</p>
+    </details>
+  </section>
+
+  <!-- ----------------------------------------------------- consulta III -->
+  <section class="secao" id="consulta-3">
+    <span class="secao__requisito">Consulta III · requisito II.d.III</span>
+    <h2>Preço mais recente de cada posto</h2>
+    <p class="secao__texto">
+      A cotação mais nova registrada em cada posto para cada combustível. É a
+      tabela para consultar antes de abastecer.
+    </p>
+    <div class="rolagem"><table id="tabela-3"><tbody><tr><td class="estado">Carregando…</td></tr></tbody></table></div>
+    <details class="sql">
+      <summary>Ver a consulta SQL que gerou esta tabela</summary>
+      <pre><code id="sql-3"></code></pre>
+      <p class="sql__origem">Arquivo <code>sql/03-consulta-3-preco-mais-recente.sql</code> do projeto físico, executado sem alteração.</p>
+    </details>
+  </section>
+
+  <!-- ------------------------------------------------------ consulta IV -->
+  <section class="secao" id="consulta-4">
+    <span class="secao__requisito">Consulta IV · requisito II.d.IV</span>
+    <h2>Evolução do preço ao longo do tempo</h2>
+    <p class="secao__texto">
+      Escolha um posto e um combustível para ver todas as coletas em ordem de data.
+      A consulta é executada de novo a cada troca — e o SQL abaixo mostra exatamente
+      o que foi executado.
+    </p>
+    <div class="controles">
+      <label class="controle">
+        <span>Posto</span>
+        <select id="seletor-posto"></select>
+      </label>
+      <label class="controle">
+        <span>Combustível</span>
+        <select id="seletor-combustivel"></select>
+      </label>
+    </div>
+    <div class="grafico"><canvas id="gr-evolucao"></canvas></div>
+    <div class="rolagem"><table id="tabela-4"><tbody><tr><td class="estado">Carregando…</td></tr></tbody></table></div>
+    <details class="sql">
+      <summary>Ver a consulta SQL que gerou esta tabela</summary>
+      <pre><code id="sql-4"></code></pre>
+      <p class="sql__origem">Arquivo <code>sql/03-consulta-4-evolucao-preco.sql</code> do projeto físico. O posto e o combustível escolhidos acima substituem os dois valores do <code>WHERE</code>.</p>
+    </details>
+  </section>
+
+  <!-- --------------------------------------------------------- graficos -->
+  <section class="secao" id="graficos">
+    <span class="secao__requisito">Gráficos · requisito II.e</span>
+    <h2>Evolução do preço médio de cada combustível</h2>
+    <p class="secao__texto">
+      Média mensal de todas as coletas da cidade, por combustível. Cada ponto reúne
+      as coletas dos cinco postos naquele mês.
+    </p>
+    <div class="grafico"><canvas id="gr-combustivel"></canvas></div>
+    <details class="sql">
+      <summary>Ver a consulta SQL que gerou este gráfico</summary>
+      <pre><code id="sql-g1"></code></pre>
+      <p class="sql__origem">Arquivo <code>sql/05-grafico-1-media-por-combustivel.sql</code>.</p>
+    </details>
+
+    <h2 style="margin-top:2rem">Evolução do preço médio em cada posto</h2>
+    <p class="secao__texto">
+      O mesmo cálculo, agora separado por posto: uma linha por posto dentro do
+      combustível escolhido. Serve para ver quem costuma cobrar mais e quem repassa
+      as quedas primeiro.
+    </p>
+    <div class="controles">
+      <label class="controle">
+        <span>Combustível</span>
+        <select id="seletor-grafico-combustivel"></select>
+      </label>
+    </div>
+    <div class="grafico"><canvas id="gr-posto"></canvas></div>
+    <details class="sql">
+      <summary>Ver a consulta SQL que gerou este gráfico</summary>
+      <pre><code id="sql-g2"></code></pre>
+      <p class="sql__origem">Arquivo <code>sql/05-grafico-2-media-por-combustivel-e-posto.sql</code>.</p>
+    </details>
+  </section>
+
+  <!-- --------------------------------------------------------- planilhas -->
+  <section class="secao" id="planilhas">
+    <span class="secao__requisito">Planilhas · requisito II.e</span>
+    <h2>Baixe os dados</h2>
+    <p class="secao__texto">
+      A planilha traz uma aba por consulta e duas abas com os gráficos de evolução
+      já montados. Os CSVs servem para quem quer abrir os dados em outra ferramenta.
+    </p>
+    <ul class="arquivos">
+      <li><a class="arquivo" href="dados/precos-combustiveis-vila-velha.xlsx" download>
+        <strong>Planilha completa (.xlsx)</strong>
+        <span>Todas as consultas e os dois gráficos, em abas separadas</span></a></li>
+      <li><a class="arquivo" href="dados/consulta-1.csv" download>
+        <strong>Menor e maior preço (.csv)</strong><span>Consulta I</span></a></li>
+      <li><a class="arquivo" href="dados/consulta-2.csv" download>
+        <strong>Média e amostras (.csv)</strong><span>Consulta II</span></a></li>
+      <li><a class="arquivo" href="dados/consulta-3.csv" download>
+        <strong>Preço mais recente (.csv)</strong><span>Consulta III</span></a></li>
+      <li><a class="arquivo" href="dados/consulta-4.csv" download>
+        <strong>Evolução no tempo (.csv)</strong><span>Consulta IV</span></a></li>
+      <li><a class="arquivo" href="dados/grafico-1-media-por-combustivel.csv" download>
+        <strong>Média mensal por combustível (.csv)</strong><span>Dados do primeiro gráfico</span></a></li>
+      <li><a class="arquivo" href="dados/grafico-2-media-por-combustivel-e-posto.csv" download>
+        <strong>Média mensal por posto (.csv)</strong><span>Dados do segundo gráfico</span></a></li>
+      <li><a class="arquivo" href="dados/banco.db" download>
+        <strong>Banco de dados (.db)</strong><span>O SQLite que esta página consulta</span></a></li>
+    </ul>
+  </section>
+
+  <!-- ------------------------------------------------------------- sobre -->
+  <section class="secao" id="sobre">
+    <h2>Sobre este projeto</h2>
+    <p class="secao__texto">
+      Projeto de Extensão da disciplina Arquitetura de Dados Relacionais&nbsp;I, da
+      Universidade Vila Velha. O objetivo é armazenar os preços de combustíveis da
+      região em um banco de dados relacional e devolver essa informação à comunidade
+      de forma consultável.
+    </p>
+    <p class="secao__texto">
+      As tabelas desta página não são um resumo pré-calculado: o navegador abre o
+      banco de dados e executa os mesmos arquivos <code>.sql</code> do projeto
+      físico, entregue na etapa anterior. É por isso que cada seção consegue mostrar
+      a consulta que a produziu.
+    </p>
+    <dl class="definicoes">
+      <dt>Autor</dt><dd>Allan Spaviero Alpoim — matrícula 202636574</dd>
+      <dt>Disciplina</dt><dd>Arquitetura de Dados Relacionais I — Universidade Vila Velha</dd>
+      <dt>Município</dt><dd>Vila Velha / ES</dd>
+      <dt>Período coberto</dt><dd id="sobre-periodo">—</dd>
+      <dt>Combustíveis</dt><dd>Gasolina, Gasolina Aditivada, Etanol e Diesel</dd>
+      <dt>Fonte dos dados</dt>
+      <dd><a href="https://www.gov.br/anp/pt-br/centrais-de-conteudo/dados-abertos/serie-historica-de-precos-de-combustiveis" target="_blank" rel="noopener">Série Histórica de Preços de Combustíveis — ANP</a></dd>
+      <dt>Banco de dados</dt><dd>MySQL 8.0 no projeto físico; SQLite no navegador, a partir da mesma carga</dd>
+      <dt>Código-fonte</dt>
+      <dd><a href="https://github.com/allanspaviero/uvv-adr1-aop010203" target="_blank" rel="noopener">github.com/allanspaviero/uvv-adr1-aop010203</a></dd>
+    </dl>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <div class="rodape__interno">
+    <p><strong>Preços de combustíveis em Vila Velha/ES</strong> — Projeto de Extensão, UVV.</p>
+    <p>Allan Spaviero Alpoim — matrícula 202636574.</p>
+    <p>Os preços exibidos são os registrados nas coletas da ANP no período indicado e não representam a cotação do dia de hoje. Confirme o valor no posto antes de abastecer.</p>
+  </div>
+</footer>
+
+<script src="vendor/sql-wasm.js"></script>
+<script src="vendor/chart.umd.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

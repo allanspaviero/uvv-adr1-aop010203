@@ -1,0 +1,9 @@
+﻿combustivel;extremo;posto;endereco;bairro;valor;data_coleta
+Diesel;MENOR PRECO;Arara Azul Rede de Postos Ltda;Rodovia do Sol, 530;Praia de Itaparica;5.95;2026-03-03
+Diesel;MAIOR PRECO;Auto Posto de Combustivel Rtt Ltda;Rua Moema, 38;Divino Espirito Santo;7.29;2026-06-01
+Etanol;MENOR PRECO;Arara Azul Rede de Postos Ltda;Rodovia do Sol, 530;Praia de Itaparica;4.37;2026-08-26
+Etanol;MAIOR PRECO;Posto Perim Ltda;Rua Santa Leopoldina, 1650;Itaparica;5.19;2026-06-01
+Gasolina;MENOR PRECO;Auto Posto de Combustivel Rtt Ltda;Rua Moema, 38;Divino Espirito Santo;5.99;2026-03-03
+Gasolina;MAIOR PRECO;Posto Perim Ltda;Rua Santa Leopoldina, 1650;Itaparica;6.69;2026-07-07
+Gasolina Aditivada;MENOR PRECO;Posto Perim Ltda;Rua Santa Leopoldina, 1650;Itaparica;6.29;2026-03-09
+Gasolina Aditivada;MAIOR PRECO;Auto Posto R M Ltda;Rodovia do Sol, 3701;Praia de Itaparica;7.07;2026-06-29

@@ -1,5 +1,5 @@
 # Dados brutos da ANP (~93 MB) — regeráveis com scripts/baixar_anp.py
-dados/
+/aop02/dados/
 
 # Entregáveis montados e capturas de tela — não versionados
 *.pdf
@@ -9,3 +9,6 @@ dados/
 
 __pycache__/
 *.pyc
+
+# Configuracao local do editor
+.claude/

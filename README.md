@@ -14,7 +14,22 @@ Banco de dados relacional que armazena e disponibiliza informações sobre o pre
 |---|---|---|
 | **AOP01** | Projeto conceitual — modelo ER completo | entregue |
 | **AOP02** | Projeto lógico (modelo relacional em 3FN) e projeto físico em MySQL | [`aop02/`](aop02/) |
-| **AOP03** | Divulgação dos resultados para a comunidade | a desenvolver |
+| **AOP03** | Divulgação dos resultados para a comunidade | [`aop03/`](aop03/) |
+
+## AOP03 — o site público
+
+**<https://allanspaviero.github.io/uvv-adr1-aop010203/>**
+
+Website que permite a qualquer pessoa efetuar as quatro consultas exigidas pelo
+enunciado, com os dois gráficos de evolução do preço médio e as planilhas para
+download.
+
+O site não reimplementa as consultas: ele abre o banco de dados dentro do próprio
+navegador, com SQLite compilado para WebAssembly, e executa os mesmos arquivos
+`.sql` da AOP02 sem alterar uma linha. Cada seção mostra, atrás de um botão, o
+comando exato que produziu a tabela acima dela.
+
+Detalhes em [`aop03/README.md`](aop03/README.md).
 
 ## AOP02 — o que já existe
 

@@ -1,0 +1,33 @@
+﻿mes;combustivel;preco_medio;qtd_amostras
+2026-01;Diesel;6.076;16
+2026-02;Diesel;6.054;18
+2026-03;Diesel;6.405;16
+2026-04;Diesel;6.949;18
+2026-05;Diesel;6.926;16
+2026-06;Diesel;6.85;24
+2026-07;Diesel;6.827;19
+2026-08;Diesel;6.828;15
+2026-01;Etanol;4.756;16
+2026-02;Etanol;4.84;18
+2026-03;Etanol;4.982;16
+2026-04;Etanol;5.056;18
+2026-05;Etanol;5.022;16
+2026-06;Etanol;4.748;24
+2026-07;Etanol;4.687;19
+2026-08;Etanol;4.638;16
+2026-01;Gasolina;6.29;16
+2026-02;Gasolina;6.199;18
+2026-03;Gasolina;6.431;16
+2026-04;Gasolina;6.452;18
+2026-05;Gasolina;6.458;16
+2026-06;Gasolina;6.529;24
+2026-07;Gasolina;6.492;19
+2026-08;Gasolina;6.342;15
+2026-01;Gasolina Aditivada;6.565;16
+2026-02;Gasolina Aditivada;6.466;18
+2026-03;Gasolina Aditivada;6.743;16
+2026-04;Gasolina Aditivada;6.78;18
+2026-05;Gasolina Aditivada;6.721;16
+2026-06;Gasolina Aditivada;6.815;24
+2026-07;Gasolina Aditivada;6.794;19
+2026-08;Gasolina Aditivada;6.572;15

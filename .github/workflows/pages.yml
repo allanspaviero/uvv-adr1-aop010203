@@ -1,0 +1,45 @@
+# Publica o site da AOP03 no GitHub Pages.
+#
+# O modo "deploy from a branch" do Pages so aceita a raiz do repositorio ou a
+# pasta /docs; como o site mora em aop03/site, a publicacao passa por Actions.
+
+name: Publicar o site da AOP03
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "aop03/site/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.publicacao.outputs.page_url }}
+    steps:
+      - name: Baixar o repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar o Pages
+        uses: actions/configure-pages@v5
+
+      - name: Empacotar a pasta do site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: aop03/site
+
+      - name: Publicar
+        id: publicacao
+        uses: actions/deploy-pages@v4

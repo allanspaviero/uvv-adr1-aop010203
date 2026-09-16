@@ -1,0 +1,161 @@
+﻿mes;combustivel;posto;bairro;preco_medio;qtd_amostras
+2026-01;Diesel;Arara Azul Rede de Postos Ltda;Praia de Itaparica;5.95;3
+2026-02;Diesel;Arara Azul Rede de Postos Ltda;Praia de Itaparica;5.95;3
+2026-03;Diesel;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.35;4
+2026-04;Diesel;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.98;4
+2026-05;Diesel;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.98;3
+2026-06;Diesel;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.74;5
+2026-07;Diesel;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.74;4
+2026-08;Diesel;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.703;4
+2026-01;Diesel;Auto Posto Boulevard Ltda;Praia de Itaparica;6.09;3
+2026-02;Diesel;Auto Posto Boulevard Ltda;Praia de Itaparica;6.09;4
+2026-03;Diesel;Auto Posto Boulevard Ltda;Praia de Itaparica;6.59;3
+2026-04;Diesel;Auto Posto Boulevard Ltda;Praia de Itaparica;6.915;4
+2026-05;Diesel;Auto Posto Boulevard Ltda;Praia de Itaparica;6.79;2
+2026-06;Diesel;Auto Posto Boulevard Ltda;Praia de Itaparica;6.75;5
+2026-07;Diesel;Auto Posto Boulevard Ltda;Praia de Itaparica;6.735;4
+2026-08;Diesel;Auto Posto Boulevard Ltda;Praia de Itaparica;6.69;2
+2026-01;Diesel;Auto Posto R M Ltda;Praia de Itaparica;6.09;4
+2026-02;Diesel;Auto Posto R M Ltda;Praia de Itaparica;6.06;4
+2026-03;Diesel;Auto Posto R M Ltda;Praia de Itaparica;6.465;4
+2026-04;Diesel;Auto Posto R M Ltda;Praia de Itaparica;6.89;4
+2026-05;Diesel;Auto Posto R M Ltda;Praia de Itaparica;6.79;3
+2026-06;Diesel;Auto Posto R M Ltda;Praia de Itaparica;6.75;5
+2026-07;Diesel;Auto Posto R M Ltda;Praia de Itaparica;6.735;4
+2026-08;Diesel;Auto Posto R M Ltda;Praia de Itaparica;6.69;2
+2026-01;Diesel;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;5.99;2
+2026-02;Diesel;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;5.99;4
+2026-03;Diesel;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.29;3
+2026-04;Diesel;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.99;3
+2026-05;Diesel;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.99;4
+2026-06;Diesel;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;7.05;5
+2026-07;Diesel;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.97;3
+2026-08;Diesel;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.97;4
+2026-01;Diesel;Posto Perim Ltda;Itaparica;6.19;4
+2026-02;Diesel;Posto Perim Ltda;Itaparica;6.19;3
+2026-03;Diesel;Posto Perim Ltda;Itaparica;6.29;2
+2026-04;Diesel;Posto Perim Ltda;Itaparica;6.99;3
+2026-05;Diesel;Posto Perim Ltda;Itaparica;6.99;4
+2026-06;Diesel;Posto Perim Ltda;Itaparica;6.99;4
+2026-07;Diesel;Posto Perim Ltda;Itaparica;6.99;4
+2026-08;Diesel;Posto Perim Ltda;Itaparica;6.99;3
+2026-01;Etanol;Arara Azul Rede de Postos Ltda;Praia de Itaparica;4.59;3
+2026-02;Etanol;Arara Azul Rede de Postos Ltda;Praia de Itaparica;4.59;3
+2026-03;Etanol;Arara Azul Rede de Postos Ltda;Praia de Itaparica;4.91;4
+2026-04;Etanol;Arara Azul Rede de Postos Ltda;Praia de Itaparica;4.985;4
+2026-05;Etanol;Arara Azul Rede de Postos Ltda;Praia de Itaparica;5.09;3
+2026-06;Etanol;Arara Azul Rede de Postos Ltda;Praia de Itaparica;4.626;5
+2026-07;Etanol;Arara Azul Rede de Postos Ltda;Praia de Itaparica;4.59;4
+2026-08;Etanol;Arara Azul Rede de Postos Ltda;Praia de Itaparica;4.425;4
+2026-01;Etanol;Auto Posto Boulevard Ltda;Praia de Itaparica;4.71;3
+2026-02;Etanol;Auto Posto Boulevard Ltda;Praia de Itaparica;4.84;4
+2026-03;Etanol;Auto Posto Boulevard Ltda;Praia de Itaparica;4.99;3
+2026-04;Etanol;Auto Posto Boulevard Ltda;Praia de Itaparica;5.04;4
+2026-05;Etanol;Auto Posto Boulevard Ltda;Praia de Itaparica;4.77;2
+2026-06;Etanol;Auto Posto Boulevard Ltda;Praia de Itaparica;4.602;5
+2026-07;Etanol;Auto Posto Boulevard Ltda;Praia de Itaparica;4.527;4
+2026-08;Etanol;Auto Posto Boulevard Ltda;Praia de Itaparica;4.39;2
+2026-01;Etanol;Auto Posto R M Ltda;Praia de Itaparica;4.74;4
+2026-02;Etanol;Auto Posto R M Ltda;Praia de Itaparica;4.84;4
+2026-03;Etanol;Auto Posto R M Ltda;Praia de Itaparica;4.965;4
+2026-04;Etanol;Auto Posto R M Ltda;Praia de Itaparica;4.99;4
+2026-05;Etanol;Auto Posto R M Ltda;Praia de Itaparica;4.843;3
+2026-06;Etanol;Auto Posto R M Ltda;Praia de Itaparica;4.602;5
+2026-07;Etanol;Auto Posto R M Ltda;Praia de Itaparica;4.527;4
+2026-08;Etanol;Auto Posto R M Ltda;Praia de Itaparica;4.39;3
+2026-01;Etanol;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;4.84;2
+2026-02;Etanol;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;4.99;4
+2026-03;Etanol;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;5.123;3
+2026-04;Etanol;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;5.123;3
+2026-05;Etanol;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;5.065;4
+2026-06;Etanol;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;4.99;5
+2026-07;Etanol;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;4.97;3
+2026-08;Etanol;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;4.97;4
+2026-01;Etanol;Posto Perim Ltda;Itaparica;4.89;4
+2026-02;Etanol;Posto Perim Ltda;Itaparica;4.89;3
+2026-03;Etanol;Posto Perim Ltda;Itaparica;4.94;2
+2026-04;Etanol;Posto Perim Ltda;Itaparica;5.19;3
+2026-05;Etanol;Posto Perim Ltda;Itaparica;5.19;4
+2026-06;Etanol;Posto Perim Ltda;Itaparica;4.965;4
+2026-07;Etanol;Posto Perim Ltda;Itaparica;4.89;4
+2026-08;Etanol;Posto Perim Ltda;Itaparica;4.89;3
+2026-01;Gasolina;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.29;3
+2026-02;Gasolina;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.21;3
+2026-03;Gasolina;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.45;4
+2026-04;Gasolina;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.46;4
+2026-05;Gasolina;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.537;3
+2026-06;Gasolina;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.612;5
+2026-07;Gasolina;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.495;4
+2026-08;Gasolina;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.437;3
+2026-01;Gasolina;Auto Posto Boulevard Ltda;Praia de Itaparica;6.29;3
+2026-02;Gasolina;Auto Posto Boulevard Ltda;Praia de Itaparica;6.14;4
+2026-03;Gasolina;Auto Posto Boulevard Ltda;Praia de Itaparica;6.58;3
+2026-04;Gasolina;Auto Posto Boulevard Ltda;Praia de Itaparica;6.43;4
+2026-05;Gasolina;Auto Posto Boulevard Ltda;Praia de Itaparica;6.405;2
+2026-06;Gasolina;Auto Posto Boulevard Ltda;Praia de Itaparica;6.486;5
+2026-07;Gasolina;Auto Posto Boulevard Ltda;Praia de Itaparica;6.5;4
+2026-08;Gasolina;Auto Posto Boulevard Ltda;Praia de Itaparica;6.32;2
+2026-01;Gasolina;Auto Posto R M Ltda;Praia de Itaparica;6.29;4
+2026-02;Gasolina;Auto Posto R M Ltda;Praia de Itaparica;6.14;4
+2026-03;Gasolina;Auto Posto R M Ltda;Praia de Itaparica;6.45;4
+2026-04;Gasolina;Auto Posto R M Ltda;Praia de Itaparica;6.43;4
+2026-05;Gasolina;Auto Posto R M Ltda;Praia de Itaparica;6.41;3
+2026-06;Gasolina;Auto Posto R M Ltda;Praia de Itaparica;6.486;5
+2026-07;Gasolina;Auto Posto R M Ltda;Praia de Itaparica;6.482;4
+2026-08;Gasolina;Auto Posto R M Ltda;Praia de Itaparica;6.31;3
+2026-01;Gasolina;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.29;2
+2026-02;Gasolina;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.29;4
+2026-03;Gasolina;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.29;3
+2026-04;Gasolina;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.463;3
+2026-05;Gasolina;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.43;4
+2026-06;Gasolina;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.524;5
+2026-07;Gasolina;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.39;3
+2026-08;Gasolina;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.27;4
+2026-01;Gasolina;Posto Perim Ltda;Itaparica;6.29;4
+2026-02;Gasolina;Posto Perim Ltda;Itaparica;6.223;3
+2026-03;Gasolina;Posto Perim Ltda;Itaparica;6.34;2
+2026-04;Gasolina;Posto Perim Ltda;Itaparica;6.49;3
+2026-05;Gasolina;Posto Perim Ltda;Itaparica;6.49;4
+2026-06;Gasolina;Posto Perim Ltda;Itaparica;6.54;4
+2026-07;Gasolina;Posto Perim Ltda;Itaparica;6.565;4
+2026-08;Gasolina;Posto Perim Ltda;Itaparica;6.39;3
+2026-01;Gasolina Aditivada;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.49;3
+2026-02;Gasolina Aditivada;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.41;3
+2026-03;Gasolina Aditivada;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.6;4
+2026-04;Gasolina Aditivada;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.76;4
+2026-05;Gasolina Aditivada;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.737;3
+2026-06;Gasolina Aditivada;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.762;5
+2026-07;Gasolina Aditivada;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.742;4
+2026-08;Gasolina Aditivada;Arara Azul Rede de Postos Ltda;Praia de Itaparica;6.543;4
+2026-01;Gasolina Aditivada;Auto Posto Boulevard Ltda;Praia de Itaparica;6.69;3
+2026-02;Gasolina Aditivada;Auto Posto Boulevard Ltda;Praia de Itaparica;6.54;4
+2026-03;Gasolina Aditivada;Auto Posto Boulevard Ltda;Praia de Itaparica;6.98;3
+2026-04;Gasolina Aditivada;Auto Posto Boulevard Ltda;Praia de Itaparica;6.83;4
+2026-05;Gasolina Aditivada;Auto Posto Boulevard Ltda;Praia de Itaparica;6.805;2
+2026-06;Gasolina Aditivada;Auto Posto Boulevard Ltda;Praia de Itaparica;6.886;5
+2026-07;Gasolina Aditivada;Auto Posto Boulevard Ltda;Praia de Itaparica;6.9;4
+2026-08;Gasolina Aditivada;Auto Posto Boulevard Ltda;Praia de Itaparica;6.72;2
+2026-01;Gasolina Aditivada;Auto Posto R M Ltda;Praia de Itaparica;6.69;4
+2026-02;Gasolina Aditivada;Auto Posto R M Ltda;Praia de Itaparica;6.54;4
+2026-03;Gasolina Aditivada;Auto Posto R M Ltda;Praia de Itaparica;6.85;4
+2026-04;Gasolina Aditivada;Auto Posto R M Ltda;Praia de Itaparica;6.83;4
+2026-05;Gasolina Aditivada;Auto Posto R M Ltda;Praia de Itaparica;6.81;3
+2026-06;Gasolina Aditivada;Auto Posto R M Ltda;Praia de Itaparica;6.886;5
+2026-07;Gasolina Aditivada;Auto Posto R M Ltda;Praia de Itaparica;6.883;4
+2026-08;Gasolina Aditivada;Auto Posto R M Ltda;Praia de Itaparica;6.72;2
+2026-01;Gasolina Aditivada;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.39;2
+2026-02;Gasolina Aditivada;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.39;4
+2026-03;Gasolina Aditivada;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.69;3
+2026-04;Gasolina Aditivada;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.763;3
+2026-05;Gasolina Aditivada;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.63;4
+2026-06;Gasolina Aditivada;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.784;5
+2026-07;Gasolina Aditivada;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.64;3
+2026-08;Gasolina Aditivada;Auto Posto de Combustivel Rtt Ltda;Divino Espirito Santo;6.44;4
+2026-01;Gasolina Aditivada;Posto Perim Ltda;Itaparica;6.49;4
+2026-02;Gasolina Aditivada;Posto Perim Ltda;Itaparica;6.423;3
+2026-03;Gasolina Aditivada;Posto Perim Ltda;Itaparica;6.54;2
+2026-04;Gasolina Aditivada;Posto Perim Ltda;Itaparica;6.69;3
+2026-05;Gasolina Aditivada;Posto Perim Ltda;Itaparica;6.69;4
+2026-06;Gasolina Aditivada;Posto Perim Ltda;Itaparica;6.74;4
+2026-07;Gasolina Aditivada;Posto Perim Ltda;Itaparica;6.765;4
+2026-08;Gasolina Aditivada;Posto Perim Ltda;Itaparica;6.59;3
